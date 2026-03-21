@@ -16,3 +16,12 @@ user , video done
 mongodb query use --> npm i mongoose-aggregate-paginate-v2
 
 installing bcrypt and JWT(JSON webtoken)
+bcrypt and jwt methods in user model
+
+file uploading  --> using cloudinary service(npm i cloudinary)
+file uploading handling in express needs multer(npm i multer)
+
+two steps (using multer , files are kept in server followed by uploading in cloudinary)
+one step (using multer , upload the files in cloudinary)
+
+upload on my device disk (a function written in middleware in multer)
