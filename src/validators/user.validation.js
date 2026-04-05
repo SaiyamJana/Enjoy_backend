@@ -20,7 +20,7 @@ const validateEmpty = (fullname , email , username , password) => {
 const validateEmailFormat = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if(!emailRegex.test(email)){
-        throw new ApiError("400" , "Invalid email format")
+        throw new ApiError("400" , "Invalid email format (required format: example@domain.com)")
     }
 }
 

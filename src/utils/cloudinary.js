@@ -17,7 +17,9 @@ const uploadOnCloudinary = async(localFilePath) => {
         return response;
     } catch (error){
         //it is in server , we have to unlink the file from server storage
-        fs.unlinkSync(localFilePath);
+        if (fs.existsSync(localFilePath)) {
+            fs.unlinkSync(localFilePath);
+        }
         console.log("Error while uploading file on Cloudinary" , error);
         return null;
     }
