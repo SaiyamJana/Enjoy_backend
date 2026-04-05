@@ -25,3 +25,10 @@ two steps (using multer , files are kept in server followed by uploading in clou
 one step (using multer , upload the files in cloudinary)
 
 upload on my device disk (a function written in middleware in multer)
+
+
+
+
+
+#difficulties :
+async and await during password hashing(bcrypt) in use.models.js
