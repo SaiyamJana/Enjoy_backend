@@ -32,3 +32,6 @@ upload on my device disk (a function written in middleware in multer)
 
 #difficulties :
 async and await during password hashing(bcrypt) in use.models.js
+
+//register , login , logout in usercontroller
+//for getting information about current user , developing a middleware 

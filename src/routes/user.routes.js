@@ -1,6 +1,8 @@
 import {Router} from "express";
-import {registerUser} from "../controllers/user.controller.js";
+import {registerUser , loginUser , logoutUser} from "../controllers/user.controller.js";
 import {upload} from "../middlewares/multer.middleware.js";
+import { verify } from "crypto";
+import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
@@ -18,5 +20,17 @@ router.route("/register").post(
     registerUser
 )//whenever /api/v1/users/register is hit then registerUser controller will be executed
 
+router.route("/login").post(
+    //loginUser
+    loginUser
+)
+
+//secured route (only for authenticated users)
+router.route("/logout").post(
+    //auth middleware
+    //logoutUser controller
+    verifyJWT,
+    logoutUser
+)
 
 export default router;
