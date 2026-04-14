@@ -22,6 +22,17 @@ const uploadOnCloudinary = async(localFilePath) => {
         }
         console.log("Error while uploading file on Cloudinary" , error);
         return null;
+    } finally {
+        // Clean up local file after upload attempt
+        if (localFilePath && fs.existsSync(localFilePath)) {
+            fs.unlink(localFilePath, (err) => {
+                if (err) {
+                    console.error("Error while deleting local file:", err);
+                } else {
+                    console.log("Local file deleted successfully");
+                }
+            });
+        }
     }
 }
 
